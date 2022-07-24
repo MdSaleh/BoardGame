@@ -16,8 +16,8 @@ namespace BoardGame
             int max = 4;
             int min = 0;
             // Directions
-            char[] clockWiseDirection = { 'N', 'E', 'S', 'W' };
-            char[] antiClockWiseDirection = { 'N', 'W', 'S', 'E' };
+            char[] leftDirection = { 'N', 'E', 'S', 'W' };
+            char[] rightDirection = { 'N', 'W', 'S', 'E' };
             //Startup direction.
             char currentDirection = 'N';
             // variable to show current direction with default values (0,0).
@@ -28,10 +28,10 @@ namespace BoardGame
                 switch (step)
                 {
                     case 'R':
-                        currentDirection = getDirection(clockWiseDirection, currentDirection);
+                        currentDirection = getDirection(leftDirection, currentDirection);
                         break;
                     case 'L':
-                        currentDirection = getDirection(antiClockWiseDirection, currentDirection);
+                        currentDirection = getDirection(rightDirection, currentDirection);
                         break;
                     case 'M':
                         moveDirections(currentDirection, max, min, ref directionX, ref directionY);
